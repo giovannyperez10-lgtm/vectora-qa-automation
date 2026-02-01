@@ -1,6 +1,8 @@
-📌 Vectora QA Automation Framework
+🧪 Vectora QA Automation Framework
 
-Automated end-to-end testing framework built with Playwright + TypeScript using Page Object Model (POM) architecture.
+End-to-End test automation framework built with Playwright + TypeScript, using Page Object Model (POM), environment configuration, and CI execution.
+
+This project simulates a real-world QA automation architecture for a fintech platform.
 
 🚀 Tech Stack
 
@@ -10,52 +12,95 @@ TypeScript
 
 Page Object Model (POM)
 
-Dotenv (environment variables)
+Dotenv (env config)
 
-GitHub Actions (CI)
+GitHub Actions (CI/CD)
 
-Multi-browser testing (Chromium, Firefox, WebKit)
+Multi-browser testing:
+
+Chromium
+
+Firefox
+
+WebKit
 
 📂 Project Structure
 tests/
- ├── e2e/          → Test cases
- ├── pages/        → Page Objects (UI logic)
- ├── fixtures/     → Custom fixtures
- └── setup/        → Login session setup
+ ├── e2e/                → Test cases
+ ├── pages/              → Page Object Models
+ ├── fixtures/           → Custom fixtures (login, setup)
+ └── setup/              → Session/login initialization
 
-playwright.config.ts → Playwright configuration
-.github/workflows     → CI pipeline
-.env                  → Environment variables
+playwright.config.ts     → Global config
+.env                     → Environment variables
 
-🔐 Features
+🔐 Environment Variables
 
-✅ Automated login
-✅ Session reuse (storageState)
-✅ Dashboard validation
-✅ Sidebar menu validation
-✅ Logged user verification
-✅ Cross-browser execution
+Create a .env file:
 
-▶️ Run tests
+BASE_URL=https://www-dev.mouvlatam.com/
+USER_EMAIL=your_user
+USER_PASS=your_password
+
+▶️ Run Tests
+
+Run all tests:
+
 npx playwright test
 
 
-Headed mode:
+Run only E2E tests:
+
+npx playwright test tests/e2e
+
+
+Run in headed mode:
 
 npx playwright test --headed
 
 
-Single browser:
+Run specific browser:
 
 npx playwright test --project=chromium
 
-📸 Reports
+🔁 Automatic Login (Session Handling)
 
-After execution:
+The framework includes a login setup test that saves the session using storageState, allowing tests to run without logging in each time.
+
+🧠 Framework Features
+
+✔ Page Object Model design
+✔ Reusable login fixture
+✔ Environment-based configuration
+✔ Cross-browser execution
+✔ HTML test reports
+✔ CI-ready structure
+
+📸 Test Evidence
+
+Playwright automatically captures:
+
+Screenshots on failure
+
+Trace files
+
+HTML reports
+
+View report:
 
 npx playwright show-report
 
-👤 Author
+🎯 Example Scenarios Automated
+
+User login
+
+Dashboard validation
+
+Sidebar menu verification (Dashboard, Recaudos, Pagos)
+
+Authenticated session handling
+
+💼 Author
 
 Giovanni Pérez
-QA Engineer | Test Automation | Playwright | API Testing
+QA Engineer | Test Automation | Playwright | API & E2E Testing
