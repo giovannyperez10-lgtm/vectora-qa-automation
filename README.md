@@ -102,5 +102,5 @@ Authenticated session handling
 
 💼 Author
 
-Giovanni Pérez
+Giovanny Pérez
 QA Engineer | Test Automation | Playwright | API & E2E Testing
