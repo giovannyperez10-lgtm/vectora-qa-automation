@@ -6,7 +6,8 @@ test('login and save session', async ({ page }) => {
   await page.getByRole('button', { name: 'Log-in' }).click();
   await page.locator('#email').fill(process.env.USER_EMAIL!);
   await page.locator('#password').fill(process.env.USER_PASS!);
-  await page.getByRole('button', { name: /login|iniciar/i }).click();
+  await page.locator('button[type="submit"]').click();
+
 
   // 🔥 ESPERAR A QUE EL LOGIN SEA REAL
   await page.waitForURL(/dashboard|home|panel/, { timeout: 20000 });
